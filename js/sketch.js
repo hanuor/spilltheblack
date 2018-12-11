@@ -1,42 +1,23 @@
-
-var num = 2000;
-var range = 6;
-
-var ax = [];
-var ay = [];
-
-
-function setup() {
-  createCanvas(500, 500);
-  for ( var i = 0; i < num; i++ ) {
-    ax[i] = width / 2;
-    ay[i] = height / 2;
-  }
-  frameRate(3);
+$(document).ready(function(){
+  const URL = "https://raw.githubusercontent.com/hanuor/spilltheblack/master/text.txt";
+  $.ajax({
+    url: URL,
+    type: "GET",
+    success: function(result) {
+      
+var m = result.match(/<body[^>]*>([^<]*(?:(?!<\/?body)<[^<]*)*)<\/body\s*>/i);
+if (m){
+ bodytext = m[1];
+  console.log (result)
 }
 
-function draw() {
-  // backgrousnd(100);
+    },
+    error: function(error) {
+      console.log('Error ${error}')
+    }
+  })
 
-  // Shift all elements 1 place to the left
-  for ( var i = 1; i < num; i++ ) {
-    ax[i - 1] = ax[i];
-    ay[i - 1] = ay[i];
-  }
 
-  // Put a new value at the end of the array
-  ax[num - 1] += random(-range, range);
-  ay[num - 1] += random(-range, range);
 
-  // Constrain all points to the screen
-  ax[num - 1] = constrain(ax[num - 1], 0, width);
-  ay[num - 1] = constrain(ay[num - 1], 0, height);
 
-  // Draw a line connecting the points
-  for ( var j = 1; j < num; j++ ) {
-    var val = j / num * 204.0 + 51;
-    stroke(val);
-    line(ax[j - 1], ay[j - 1], ax[j], ay[j]);
-    fill(color(204, 102, 0));
-  }
-}
+})

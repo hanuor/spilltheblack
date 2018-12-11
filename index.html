@@ -4,8 +4,9 @@
    <head>
 <script src="js/p5.js"></script>
 <script src="js/p5.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script> -->
-   <!-- <script src="js/sketch.js"></script> -->
+   <script src="js/sketch.js"></script>
    	<link rel="stylesheet" href="css/home.css">
       <title>Spill the Black</title>
    </head>
@@ -14,6 +15,80 @@
    	<div ></div>
    	<img id="header_img"  src="https://p5js.org/assets/img/p5js.svg">
     <!-- <h1>Spill the Black</h1> -->
+
+
+    <style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Github as a server?</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Being a lazy ass, I wanted to control the content of my personal website through my mobile and without interacting with the git terminal at…
+</section>
+<section data-field="body" class="e-content">
+<section name="42df" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="408c" id="408c" class="graf graf--h3 graf--hasDropCapModel graf--leading graf--title">Github as a server?</h3><figure name="0575" id="0575" class="graf graf--figure graf-after--h3"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 368px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 52.5%;"></div><img class="graf-image" data-image-id="1*CMA8aiTlBYufNVaYGiOx1w.png" data-width="1200" data-height="630" src="https://cdn-images-1.medium.com/max/800/1*CMA8aiTlBYufNVaYGiOx1w.png"></div><figcaption class="imageCaption">A cat. (Image source — Google)</figcaption></figure><p name="8858" id="8858" class="graf graf--p graf-after--figure">Being a lazy ass, I wanted to control the content of my personal website through my mobile and without interacting with the <a href="https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line" data-href="https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">git terminal</a> at all. Problem was, every time, I had to look up where my local repo was, had to open the terminal, put in some commands, manually change the html code, put in another set of commands and then at last the changes would go live.</p><p name="07e6" id="07e6" class="graf graf--p graf-after--p graf--trailing">A lot of effort would go into all of this. Hence, here is what I came up with.</p></div></div></section><section name="200d" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="f9a4" id="f9a4" class="graf graf--p graf--leading">If you would visit a Repo’s page on Github, you would find something called <strong class="markup--strong markup--p-strong">Raw </strong>shining brightly on the center-right of your screen.</p><figure name="f158" id="f158" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 325px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 46.400000000000006%;"></div><img class="graf-image" data-image-id="1*oSjifV2exEPnP3iSIT4F2w.png" data-width="1271" data-height="590" src="https://cdn-images-1.medium.com/max/800/1*oSjifV2exEPnP3iSIT4F2w.png"></div><figcaption class="imageCaption">Github — RAW</figcaption></figure><p name="0e52" id="0e52" class="graf graf--p graf-after--figure">For those of you who don’t know what it is — Raw, simply to put, is the unprocessed version of your file’s content.</p><p name="46e3" id="46e3" class="graf graf--p graf-after--p">So if you just click the Raw button, you would see that it returns a text to you.</p><p name="c60d" id="c60d" class="graf graf--p graf-after--p graf--trailing">Kind of how a REST Api works. Interesting.</p></div></div></section><section name="153b" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="9f7f" id="9f7f" class="graf graf--p graf--leading">We know for a fact that Github allows us to commit our code without the use of terminal.</p><p name="1ebc" id="1ebc" class="graf graf--p graf-after--p graf--trailing">So, the idea is to use Github as a server from where we can ping or request information every time we want it. And for that we can assume that the Raw format is actually an Api returning the requested information.</p></div></div></section><section name="8e05" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="a8a2" id="a8a2" class="graf graf--p graf--leading"><strong class="markup--strong markup--p-strong">Warning </strong>— Implementation is for <a href="https://pages.github.com/" data-href="https://pages.github.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Github Pages</a> only.</p><figure name="4dd6" id="4dd6" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 591px; max-height: 234px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 39.6%;"></div><img class="graf-image" data-image-id="1*vmHln4JZ1QJ2O4YQkG07Jg.png" data-width="591" data-height="234" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*vmHln4JZ1QJ2O4YQkG07Jg.png"></div><figcaption class="imageCaption">Flow</figcaption></figure><p name="1946" id="1946" class="graf graf--p graf-after--figure">Now, I have set up <a href="https://raw.githubusercontent.com/hanuor/shanjohri/gh-pages/data/footer-notes.md" data-href="https://raw.githubusercontent.com/hanuor/shanjohri/gh-pages/data/footer-notes.md" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">this link</a>, which would return me the footer content of my html website.</p><p name="df15" id="df15" class="graf graf--p graf-after--p">And inside my js file, all I did was fetch the div and load the data using the URL.</p><figure name="bdcf" id="bdcf" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/hanuor/2b963e8bce84c2c3dfc2b3899c1bcfce#file-index-js.js"></script></figure><p name="fb11" id="fb11" class="graf graf--p graf-after--figure graf--trailing">And that’s pretty much how this works. The downside? Your content is out there, visible to everyone. But that’s how open source works. Right?</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@shanjohri" class="p-author h-card">Shantanu Johri</a> on <a href="https://medium.com/p/52c502140df7"><time class="dt-published" datetime="2018-03-24T16:19:41.377Z">March 24, 2018</time></a>.</p><p><a href="https://medium.com/@shanjohri/github-as-a-server-52c502140df7" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on December 11, 2018.</p></footer></article></body>
    </body>
 	
 </html>

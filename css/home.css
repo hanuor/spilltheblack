@@ -2,23 +2,12 @@ html, body {
   background-color: 	#fdf1cb;
 }
 
-body {
-  margin: 0;
-  display: flex;
-
-  /* This centers our sketch horizontally. */
-  justify-content: center;
-
-  /* This centers our sketch vertically. */
-  align-items: center;
-
-}
 
 #header_img {
 	display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 20%;
 }
 #defaultCanvas0 {
 	display: none;
