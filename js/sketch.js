@@ -7,7 +7,7 @@ var ay = [];
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(500, 500);
   for ( var i = 0; i < num; i++ ) {
     ax[i] = width / 2;
     ay[i] = height / 2;
