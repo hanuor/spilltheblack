@@ -1,5 +1,4 @@
 html, body {
-  height: 100%;
   background-color: 	#fdf1cb;
 }
 
@@ -12,4 +11,9 @@ body {
 
   /* This centers our sketch vertically. */
   align-items: center;
+
+}
+
+#defaultCanvas0 {
+	display: none;
 }
