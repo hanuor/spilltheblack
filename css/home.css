@@ -1,7 +1,19 @@
-html, body {
-  background-color: 	#fdf1cb;
+ html, body {
+  background-color: 	#ffffff;
+
 }
 
+@font-face { font-family: 'tomato'; src: url('fonts/tomato.ttf') format ('ttf'); } 
+.footer {
+background-color: 	#000000;	
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: tomato;
+}
 
 #header_img {
 	display: block;
