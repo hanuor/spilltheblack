@@ -78,24 +78,28 @@ $(document).ready(function () {
     // console.log(style[0]);
 
 
-readTextFile("uploader/data.html");
+    var masterString = readTextFile("https://raw.githubusercontent.com/hanuor/spilltheblack/master/uploader/data.html");
+    var head = masterString.match(/<head[^>]*>[\s\S]*<\/head>/gi);
+    var body = masterString.match(/<article[^>]*>[\s\S]*<\/article>/gi);
+    var style = masterString.match(/<style[^>]*>[\s\S]*<\/style>/gi);
+    console.log(body[0]);
+    $(style[0]).appendTo('body');
+    $(body[0]).appendTo('#showcase_content');
 });
 
-function readTextFile(file)
-{
+function readTextFile(file) {
+    var fetchedString = "";
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                console.log(allText);
-                alert(allText);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
+                fetchedString = rawFile.responseText;
             }
         }
     }
     rawFile.send(null);
+    if (fetchedString.length != 0) {
+        return fetchedString;
+    }
 }
