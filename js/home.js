@@ -82,7 +82,6 @@ $(document).ready(function () {
     var head = masterString.match(/<head[^>]*>[\s\S]*<\/head>/gi);
     var body = masterString.match(/<article[^>]*>[\s\S]*<\/article>/gi);
     var style = masterString.match(/<style[^>]*>[\s\S]*<\/style>/gi);
-    console.log(body[0]);
     $(style[0]).appendTo('body');
     $(body[0]).appendTo('#showcase_content');
 });
