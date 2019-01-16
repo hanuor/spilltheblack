@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     readTextFile("https://raw.githubusercontent.com/hanuor/spilltheblack/master/uploader/data.html");
 
 });
@@ -14,8 +13,9 @@ function readTextFile(file) {
             var footer = body[0].match(/<footer[^>]*>[\s\S]*<\/footer>/gi);
             var bodyPrint = body[0].replace(footer[0], '');
             var style = masterString.match(/<style[^>]*>[\s\S]*<\/style>/gi);
-            $(style[0]).appendTo('body');
+            // $(style[0]).appendTo('body');
             $(bodyPrint).appendTo('#showcase_content');
+            console.log(style[0]);
 
         }
     };
