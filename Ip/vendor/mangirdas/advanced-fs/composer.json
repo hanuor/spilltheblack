@@ -1,0 +1,20 @@
+{
+  "name": "mangirdas/file-system",
+  "description": "Advanced file-system operations. For those who want a native php implementation of `rm -rf`, etc.",
+  "autoload": {
+    "psr-4": {
+      "AdvancedFs\\": "src/AdvancedFs/"
+    },
+    "classmap": [
+      "src/AdvancedFs.php"
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.5.*"
+  },
+  "minimum-stability": "stable",
+  "license": [
+    "MIT",
+    "GPL-3.0+"
+  ]
+}
